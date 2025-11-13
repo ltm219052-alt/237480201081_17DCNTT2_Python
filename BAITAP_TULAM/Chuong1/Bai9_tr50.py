@@ -8,5 +8,5 @@ for m in menh_gia:
         print(so_to, "tờ", m)
     so_tien = so_tien % m
 
-if so_tien > 0:
-    print("Số tiền còn dư không chia hết cho 1000:", so_tien)
+if so_tien >= 0:
+    print("Số tiền còn dư: ", so_tien)

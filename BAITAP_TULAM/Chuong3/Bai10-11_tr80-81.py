@@ -28,9 +28,25 @@ def bcnn(a, b):
 def nguyen_to_cung_nhau(a, b):
     return ucln(a, b) == 1
 
-a = int(input("Nhập số a: "))
-b = int(input("Nhập số b: "))
-n = int(input("Nhập n:"))
+if __name__ == "__main__":
+    while True:
+        try:
+            a = int(input("Nhập a: "))
+            break
+        except ValueError:
+            print("nhập số bất kỳ!")
+    while True:
+        try:
+            b = int(input("Nhập b: "))
+            break
+        except ValueError:
+            print("nhập số bất kỳ!")
+    while True:
+        try:
+            n = int(input("Nhập n: "))
+            break
+        except ValueError:
+            print("nhập số bất kỳ!")
 
 print("Số chẵn: ",so_chan(n))
 print("Số hoàn hảo: ",so_hoan_hao(n))

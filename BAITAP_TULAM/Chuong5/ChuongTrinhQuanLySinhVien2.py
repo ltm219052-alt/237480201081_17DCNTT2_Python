@@ -1,5 +1,5 @@
 # main.py
-import BT(1)_TR133 as sm
+import ChuongTrinhQuanLySinhVien1 as sm
 
 def menu():
     """Hiển thị menu chọn chức năng"""

@@ -1,6 +1,6 @@
-def vi_tri_max(lst):
-    max_value = max(lst)
-    return lst.index(max_value)+1
+def vi_tri_max(ds):
+    max_value = max(ds)
+    return ds.index(max_value)+1
 
 if __name__ == "__main__":
     while True:

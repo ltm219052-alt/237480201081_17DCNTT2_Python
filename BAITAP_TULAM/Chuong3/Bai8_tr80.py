@@ -14,7 +14,26 @@ def so_nguyen_to_trong_list(L, a):
             if len(result) == a:
                 break
     return result
-
-L = list(map(int, input("Nhập list số nguyên: ").split()))
-a = int(input("Nhập a: "))
-print("List số nguyên tố:", so_nguyen_to_trong_list(L, a))
+while True:
+    try:
+        n = int(input("Nhập n: "))
+        break
+    except ValueError:
+        print("nhập số bất kỳ!")
+lst=[]
+for i in range(n):
+    while True:
+        try:
+            x=int(input(f"Nhập phần tử thứ {i+1}: "))
+            lst.append(x)
+            break
+        except ValueError:
+            print("Vui lòng nhập số nguyên hợp lệ!")
+while True:
+    try:
+        k = int(input("Nhập số nguyên k: "))
+        break
+    except ValueError:
+        print("nhập phần tử tìm vi!")
+kq = so_nguyen_to_trong_list(lst, k)
+print("Kết quả:", kq)

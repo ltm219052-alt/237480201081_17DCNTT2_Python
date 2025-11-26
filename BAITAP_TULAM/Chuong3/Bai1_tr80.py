@@ -1,11 +1,9 @@
-def in_bang_cuu_chuong(a, b):
-    if a > b:
-        n = a
-    else:
-        n = b
-    for i in range(1, 11):
+def bang_cuu_chuong_lon_hon(a, b):
+    n = max(a, b)
+    print(f"Bảng cửu chương của {n}:")
+    for i in range(1, 10):
         print(f"{n} x {i} = {n*i}")
 
 a = int(input("Nhập số thứ nhất: "))
 b = int(input("Nhập số thứ hai: "))
-in_bang_cuu_chuong(a, b)
+bang_cuu_chuong_lon_hon(a, b)

@@ -1,40 +1,23 @@
-def key_max_value(d):
-    max_key = None
-    max_value = None
-
-    for key, value in d.items():
-        if (max_value is None) or (value > max_value):
-            max_value = value
-            max_key = key
-
-    return max_key
-
-'''d = {
-    "a": 10,
-    "b": 25,
-    "c": 7,
-    "d": 25
-}
-
-print("Key có giá trị lớn nhất:", key_max_value(d))'''
-d = {}
-while True:
-    try:
-        n = int(input("Nhập số lượng phần tử của dictionary: "))
-        break
-    except ValueError:
-        print("Nhập số bất kỳ!")
-
-for i in range(n):
-    key = input(f"Nhập key thứ {i+1}: ")
+def nhap_dictionary():
+    d = {}
+    print("Nhập dictionary (nhập 'stop' để dừng):")
     while True:
-        try:
-            value = int(input(f"Nhập value của '{key}': "))
+        key = input("Nhập key: ")
+        if key.lower() == "stop":
             break
-        except ValueError:
-            print("Nhập số bất kỳ!")
-
-    d[key] = value
-
-print("Dictionary vừa nhập:", d)
-print("Key có giá trị lớn nhất là:", key_max_value(d))
+        while True:
+            try:
+                value = int(input(f"Nhập giá trị cho key '{key}': "))
+                break
+            except ValueError:
+                print("Giá trị phải là số nguyên! Nhập lại.")
+        d[key] = value
+    return d
+def key_max_value(dic):
+    if not dic:
+        return None
+    return max(dic, key=lambda k: dic[k])
+data = nhap_dictionary()
+print("Dictionary vừa nhập:", data)
+kq = key_max_value(data)
+print("➡ Key có giá trị lớn nhất là:", kq)

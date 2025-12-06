@@ -1,30 +1,34 @@
-print("Bấm 0 để thoát!")
-while True:
-    try:
-        n = int(input("Nhập số lượng phần tử: "))
-        break
-    except ValueError:
-        print("Nhập số bất kỳ!")
-
-sv = []
-for i in range(n):
-    name = input(f"Nhập tên sinh viên thứ {i+1}: ")
-    sv.append(name)
-
-while True:
-    tim = input("Nhập tên sinh viên cần tìm (nhập 0 để dừng): ")
-
-    if tim == "0":
-        print("Kết thúc tìm kiếm!")
-        break
-
-    found = False
-    for ten in sv:
-        if ten.lower() == tim.lower():
-            found = True
+def nhap_danh_sach():
+    while True:
+        try:
+            n = int(input("Nhập số lượng sinh viên: "))
+            if n <= 0:
+                print("Số lượng phải > 0!")
+                continue
             break
+        except ValueError:
+            print("Vui lòng nhập số nguyên!")
+    ds = []
+    for i in range(n):
+        while True:
+            ten = input(f"Nhập tên sinh viên thứ {i+1}: ").strip()
+            if ten == "":
+                print("Tên không được để trống!")
+            else:
+                ds.append(ten)
+                break
+    return ds
+def tim_kiem(ds):
+    ten_can_tim = input("Nhập tên cần tìm: ").strip()
+    tim_thay = False
+    for i in range(len(ds)):
+        if ds[i].lower() == ten_can_tim.lower():  # so sánh không phân biệt hoa thường
+            print(f">>> Tìm thấy '{ten_can_tim}' ở vị trí {i} trong danh sách.")
+            tim_thay = True
+            break
+    if not tim_thay:
+        print(f">>> Không tìm thấy '{ten_can_tim}' trong danh sách.")
+danh_sach = nhap_danh_sach()
+print("Danh sách sinh viên đã nhập:", danh_sach)
 
-    if found:
-        print("=> Sinh viên có trong danh sách!")
-    else:
-        print("=> Không tìm thấy sinh viên!")
+tim_kiem(danh_sach)
